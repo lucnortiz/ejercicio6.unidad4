@@ -5,6 +5,7 @@ from ObjectEncoder import ObjectEncoder
 
 def main():
     conn= ObjectEncoder('datos.json')
+    print(conn)
     repo= RepositorioProvincias(conn)
     vista= ProvinciaView()
     ctrl= ControladorProvincias(repo, vista)

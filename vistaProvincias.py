@@ -11,19 +11,19 @@ class ProvinciaList(tk.Frame):
         scroll.pack(side=tk.RIGHT, fill=tk.Y)
         self.lb.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
     
-    def insertar(self, provincia, index=tk.END):
+    def insertar(self, provincia, index= tk.END):
         text = "{}".format(provincia.get_nombre())
         self.lb.insert(index, text)
     
-    def borrar(self, index):
-        self.lb.delete(index, index)
+    #def borrar(self, index):
+        #self.lb.delete(index, index)
     
     def modificar(self, provincia, index):
         self.borrar(index)
         self.insertar(provincia, index)
         
     def bind_doble_click(self, callback):
-        handler = lambda: callback(self.lb.curselection()[0])
+        handler = lambda _: callback(self.lb.curselection()[0])
         self.lb.bind("<Double-Button-1>", handler)
         
         
@@ -47,7 +47,7 @@ class ProvinciaForm(tk.LabelFrame):
     # a partir de un contacto, obtiene el estado
     # y establece en los valores en el formulario de entrada
     def mostrarEstadoProvinciaEnFormulario(self, provincia):
-        values = (provincia.get_nombre, provincia.get_capital, provincia.get_cantidad_hab, provincia.get_cantidad_dep)
+        values = (provincia.get_nombre(), provincia.get_capital(), provincia.get_cantidad_hab(), provincia.get_cantidad_dep())
         for entry, value in zip(self.entries, values):
             entry.delete(0, tk.END)
             entry.insert(0, value)

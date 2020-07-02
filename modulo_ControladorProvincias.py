@@ -19,7 +19,7 @@ class ControladorProvincias(object):
     
     def seleccionarProvincia(self, index):
         self.seleccion = index
-        provincia = self.provincia[index]
+        provincia = self.provincias[index]
         self.vista.verProvinciaEnForm(provincia)
     
     def modificarProvincia(self):
@@ -29,7 +29,7 @@ class ControladorProvincias(object):
         detallesProvincia = self.vista.obtenerDetalles()
         detallesProvincia.rowid = rowid
         provincia = self.repo.modificarProvincia(detallesProvincia)
-        self.provincia[self.seleccion] = provincia
+        self.provincias[self.seleccion] = provincia
         self.vista.modificarProvincia(provincia, self.seleccion)
         self.seleccion=-1
     

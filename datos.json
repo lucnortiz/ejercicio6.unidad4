@@ -10,7 +10,6 @@
             "cantidad_dep": 19
             }
         },
-
         {
         "__class__": "Provincia",
         "__atributos__": {
@@ -19,8 +18,7 @@
             "cantidad_hab": 1200000,
             "cantidad_dep": 16
             }
-        },
-        
+        }, 
         {
         "__class__": "Provincia",
         "__atributos__": {
